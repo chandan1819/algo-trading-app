@@ -1,5 +1,8 @@
 """Authentication API routes."""
 
+from __future__ import annotations
+from typing import Optional
+
 import logging
 
 from fastapi import APIRouter, HTTPException
@@ -27,8 +30,8 @@ class LoginResponse(BaseModel):
 
 class StatusResponse(BaseModel):
     logged_in: bool
-    client_id: str | None = None
-    session_age_seconds: float | None = None
+    client_id: Optional[str] = None
+    session_age_seconds: Optional[float] = None
 
 
 @router.post("/login", response_model=LoginResponse)

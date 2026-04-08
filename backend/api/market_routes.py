@@ -1,7 +1,9 @@
 """Market data API routes."""
 
+from __future__ import annotations
+
 import logging
-from typing import Any
+from typing import Any, Optional
 
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
@@ -42,8 +44,8 @@ class InstrumentResult(BaseModel):
     token: str
     name: str
     exchange: str
-    instrument_type: str | None = None
-    lot_size: str | None = None
+    instrument_type: Optional[str] = None
+    lot_size: Optional[str] = None
 
 
 @router.get("/ltp/{ticker}", response_model=LTPResponse)
@@ -94,7 +96,7 @@ async def get_historical(
 @router.get("/instruments/search", response_model=list[InstrumentResult])
 async def search_instruments(
     query: str = Query(..., min_length=1, description="Search term"),
-    exchange: str | None = Query(None, description="Filter by exchange"),
+    exchange: Optional[str] = Query(None, description="Filter by exchange"),
     limit: int = Query(20, ge=1, le=100),
 ):
     """Search instruments by name or symbol."""

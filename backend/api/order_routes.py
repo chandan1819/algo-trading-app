@@ -1,7 +1,9 @@
 """Order management API routes."""
 
+from __future__ import annotations
+
 import logging
-from typing import Any
+from typing import Any, Optional
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
@@ -23,12 +25,12 @@ class PlaceOrderRequest(BaseModel):
         ..., description="BUY or SELL"
     )
     quantity: int = Field(..., gt=0)
-    price: float | None = Field(None, description="Required for LIMIT/SL orders")
+    price: Optional[float] = Field(None, description="Required for LIMIT/SL orders")
     product_type: str = Field(
         "INTRADAY", description="INTRADAY, DELIVERY, or CARRYFORWARD"
     )
     exchange: str = "NSE"
-    trigger_price: float | None = None
+    trigger_price: Optional[float] = None
 
 
 class PlaceOrderResponse(BaseModel):
@@ -38,10 +40,10 @@ class PlaceOrderResponse(BaseModel):
 
 
 class ModifyOrderRequest(BaseModel):
-    order_type: str | None = None
-    quantity: int | None = None
-    price: float | None = None
-    trigger_price: float | None = None
+    order_type: Optional[str] = None
+    quantity: Optional[int] = None
+    price: Optional[float] = None
+    trigger_price: Optional[float] = None
 
 
 class OrderDetail(BaseModel):
@@ -52,9 +54,9 @@ class OrderDetail(BaseModel):
     order_type: str
     product_type: str
     quantity: int
-    price: float | None = None
+    price: Optional[float] = None
     status: str
-    placed_at: str | None = None
+    placed_at: Optional[str] = None
 
 
 class TradeDetail(BaseModel):
@@ -63,7 +65,7 @@ class TradeDetail(BaseModel):
     transaction_type: str
     quantity: int
     price: float
-    executed_at: str | None = None
+    executed_at: Optional[str] = None
 
 
 class PositionDetail(BaseModel):
@@ -73,7 +75,7 @@ class PositionDetail(BaseModel):
     avg_price: float
     current_price: float
     pnl: float
-    product_type: str | None = None
+    product_type: Optional[str] = None
 
 
 class HoldingDetail(BaseModel):

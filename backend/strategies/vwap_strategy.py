@@ -6,6 +6,8 @@ Only trades during NSE market hours (9:15 AM - 3:15 PM IST).
 Exits all positions before 3:15 PM.
 """
 
+from __future__ import annotations
+
 import pandas as pd
 from datetime import time
 

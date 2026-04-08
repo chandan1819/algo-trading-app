@@ -1,8 +1,10 @@
 """Backtesting API routes."""
 
+from __future__ import annotations
+
 import logging
 from datetime import date
-from typing import Any
+from typing import Any, Optional
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
@@ -60,7 +62,7 @@ class BacktestTradeDetail(BaseModel):
 
 
 class BacktestResponse(BaseModel):
-    id: int | None = None
+    id: Optional[int] = None
     strategy_name: str
     ticker: str
     start_date: str

@@ -1,5 +1,7 @@
 """SQLAlchemy ORM models for the algo trading application."""
 
+from __future__ import annotations
+
 from datetime import date, datetime, timezone
 from typing import Any, Optional
 

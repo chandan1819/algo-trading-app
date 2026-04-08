@@ -6,6 +6,8 @@ SELL when price breaks below support with volume surge.
 Confirms breakout using close price (not wicks).
 """
 
+from __future__ import annotations
+
 import pandas as pd
 
 from .base_strategy import BaseStrategy, Signal, TradeSignal

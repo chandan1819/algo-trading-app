@@ -1,5 +1,7 @@
 """Structured logging configuration with JSON formatting."""
 
+from __future__ import annotations
+
 import logging
 import logging.handlers
 import json

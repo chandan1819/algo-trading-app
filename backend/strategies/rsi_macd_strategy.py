@@ -5,6 +5,8 @@ BUY when RSI is oversold AND MACD line crosses above signal line.
 SELL when RSI is overbought AND MACD line crosses below signal line.
 """
 
+from __future__ import annotations
+
 import pandas as pd
 
 from .base_strategy import BaseStrategy, Signal, TradeSignal

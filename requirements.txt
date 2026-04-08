@@ -1,4 +1,5 @@
 smartapi-python
+logzero
 pyotp
 fastapi
 uvicorn[standard]
@@ -10,6 +11,7 @@ pydantic-settings
 python-jose[cryptography]
 httpx
 websockets
+websocket-client
 python-telegram-bot
 aiosmtplib
 redis

@@ -1,7 +1,9 @@
 """Strategy management API routes."""
 
+from __future__ import annotations
+
 import logging
-from typing import Any
+from typing import Any, Optional
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
@@ -45,8 +47,8 @@ class SignalDetail(BaseModel):
     signal: str
     ticker: str
     price: float
-    stop_loss: float | None = None
-    target: float | None = None
+    stop_loss: Optional[float] = None
+    target: Optional[float] = None
     strategy_name: str
     reason: str
     quantity: int

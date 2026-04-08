@@ -4,6 +4,8 @@ Generates BUY when the fast EMA crosses above the slow EMA
 and SELL when the fast EMA crosses below the slow EMA.
 """
 
+from __future__ import annotations
+
 import pandas as pd
 
 from .base_strategy import BaseStrategy, Signal, TradeSignal

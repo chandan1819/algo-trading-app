@@ -3,6 +3,8 @@ Shared technical indicator functions for NSE India trading strategies.
 All functions operate on pandas Series/DataFrames using vectorized operations.
 """
 
+from __future__ import annotations
+
 import pandas as pd
 import numpy as np
 from typing import Tuple

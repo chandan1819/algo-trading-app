@@ -1,8 +1,10 @@
 """Dashboard data API routes."""
 
+from __future__ import annotations
+
 import logging
 from datetime import date, datetime, timedelta, timezone
-from typing import Any
+from typing import Any, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel
@@ -47,7 +49,7 @@ class TradeLogEntry(BaseModel):
     transaction_type: str
     quantity: int
     price: float
-    strategy_name: str | None = None
+    strategy_name: Optional[str] = None
     executed_at: str
 
 
@@ -145,8 +147,8 @@ async def get_overall_stats(session: AsyncSession = Depends(get_session)):
 async def get_trade_log(
     page: int = Query(1, ge=1),
     page_size: int = Query(50, ge=1, le=200),
-    ticker: str | None = Query(None),
-    strategy: str | None = Query(None),
+    ticker: Optional[str] = Query(None),
+    strategy: Optional[str] = Query(None),
     session: AsyncSession = Depends(get_session),
 ):
     """Get paginated trade log."""

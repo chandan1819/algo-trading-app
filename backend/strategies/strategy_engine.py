@@ -4,6 +4,8 @@ Loads strategy configurations, manages strategy lifecycle, and runs
 all enabled strategies against market data in parallel.
 """
 
+from __future__ import annotations
+
 import asyncio
 import json
 import logging

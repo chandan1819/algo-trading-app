@@ -8,6 +8,8 @@ Supports two modes:
 Includes bandwidth squeeze detection for anticipating breakouts.
 """
 
+from __future__ import annotations
+
 import pandas as pd
 
 from .base_strategy import BaseStrategy, Signal, TradeSignal
