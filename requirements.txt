@@ -1,0 +1,17 @@
+smartapi-python
+pyotp
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+aiosqlite
+pandas
+numpy
+pydantic-settings
+python-jose[cryptography]
+httpx
+websockets
+python-telegram-bot
+aiosmtplib
+redis
+python-multipart
+jinja2

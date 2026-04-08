@@ -1,0 +1,40 @@
+{
+  "ma_crossover": {
+    "enabled": false,
+    "fast_period": 9,
+    "slow_period": 21,
+    "timeframe": "FIFTEEN_MINUTE",
+    "tickers": ["RELIANCE", "INFY", "TCS"]
+  },
+  "rsi_macd": {
+    "enabled": false,
+    "rsi_period": 14,
+    "rsi_overbought": 70,
+    "rsi_oversold": 30,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9,
+    "timeframe": "FIFTEEN_MINUTE",
+    "tickers": ["HDFCBANK", "ICICIBANK"]
+  },
+  "bollinger_breakout": {
+    "enabled": false,
+    "period": 20,
+    "std_dev": 2,
+    "timeframe": "FIFTEEN_MINUTE",
+    "tickers": ["SBIN", "AXISBANK"]
+  },
+  "vwap_intraday": {
+    "enabled": false,
+    "deviation_pct": 1.5,
+    "timeframe": "FIVE_MINUTE",
+    "tickers": ["RELIANCE", "TCS"]
+  },
+  "support_resistance_breakout": {
+    "enabled": false,
+    "lookback_period": 20,
+    "breakout_threshold": 0.5,
+    "timeframe": "FIFTEEN_MINUTE",
+    "tickers": ["INFY", "WIPRO"]
+  }
+}
